@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        background: linear-gradient(to bottom right, #004d40, #311b92);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .login {
+        max-width: 400px;
+        padding: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      input {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        transition: background-color 0.3s ease;
+      }
+
+      input:focus {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #ba310b;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #0a0000;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+    </style>
+    <title>Fraud Transaction Detection</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <h1>PREDICTION</h1> {% if data == 0 %} <h1>Not a Fraud Transaction</h1> {% else %} <h1>Fraud Transaction</h1> {% endif %} <br>
+        <br>
+        <a class="txt1" href="/">Go back to home page</a>
+      </div>
+      <br>
+      <br>
+      <div class="created-by">
+        <h2>Created By:</h2>
+        <h2>Agamdeep Singh</h2>
+        <h2>iNeuron.ai</h2>
+      </div>
+    </div>
+  </body>
+</html>
