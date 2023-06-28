@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        background-image: url("credit-card-background.jpg");
+        background-size: cover;
+        font-family: 'Pacifico', cursive;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 80px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .title {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .input-group label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .input-group input[type="number"] {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        border-radius: 3px;
+        color: #333333;
+        font-size: 14px;
+        height: 40px;
+        padding: 0 10px;
+        width: 100%;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .button-container button {
+        background-color: #FF6F61;
+        border: none;
+        border-radius: 3px;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-size: 16px;
+        height: 40px;
+        width: 120px;
+        transition: background-color 0.3s ease;
+      }
+
+      .button-container button:disabled {
+        background-color: #999999;
+        cursor: not-allowed;
+      }
+
+      .button-container button:hover:not(:disabled) {
+        background-color: #E64C3C;
+      }
+    </style>
+    <script>
+      function showNextInput() {
+        var currentInput = document.querySelector('.input-group:not(.hidden)');
+        if (currentInput) {
+          currentInput.classList.add('hidden');
+          var nextInput = currentInput.nextElementSibling;
+          if (nextInput) {
+            nextInput.classList.remove('hidden');
+          }
+        }
+        // Check if all inputs are filled
+        var allInputs = document.querySelectorAll('.input-group input');
+        var filledInputs = Array.from(allInputs).filter(input => input.value !== '');
+        var predictButton = document.getElementById('predict-button');
+        predictButton.disabled = filledInputs.length !== allInputs.length;
+      }
+    </script>
+    <title>Fraud Transaction Detection</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Fraud Transaction Detection</h1>
+      <form method="POST" action="{{url_for('home')}}">
+        <div class="input-group">
+          <label>Time:</label>
+          <input type="number" name="Time" placeholder="Enter time in seconds">
+        </div>
+        <div class="input-group hidden">
+          <label>Second value:</label>
+          <input type="number" name="v1" placeholder="Enter 2 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Third value:</label>
+          <input type="number" name="v2" placeholder="Enter 3 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Fourth value:</label>
+          <input type="number" name="v2" placeholder="Enter 4 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Fifth value:</label>
+          <input type="number" name="v2" placeholder="Enter 5 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Sixth value:</label>
+          <input type="number" name="v2" placeholder="Enter 6 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Seventh value:</label>
+          <input type="number" name="v2" placeholder="Enter 7 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Eight value:</label>
+          <input type="number" name="v2" placeholder="Enter 8 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Nineth value:</label>
+          <input type="number" name="v2" placeholder="Enter 9 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Tenth value:</label>
+          <input type="number" name="v2" placeholder="Enter 10 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Eleventh value:</label>
+          <input type="number" name="v2" placeholder="Enter 11 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twelth value:</label>
+          <input type="number" name="v2" placeholder="Enter 12 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Thirthen value:</label>
+          <input type="number" name="v2" placeholder="Enter 13 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Fourteen value:</label>
+          <input type="number" name="v2" placeholder="Enter 14 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Fifteen value:</label>
+          <input type="number" name="v2" placeholder="Enter 15 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Sixteen value:</label>
+          <input type="number" name="v2" placeholder="Enter 16 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Seventeen value:</label>
+          <input type="number" name="v2" placeholder="Enter 17 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Eighteen value:</label>
+          <input type="number" name="v2" placeholder="Enter 18 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Nineteen value:</label>
+          <input type="number" name="v2" placeholder="Enter 19 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty value:</label>
+          <input type="number" name="v2" placeholder="Enter 20 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty one value:</label>
+          <input type="number" name="v2" placeholder="Enter 21 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty two value:</label>
+          <input type="number" name="v2" placeholder="Enter 22 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty Three value:</label>
+          <input type="number" name="v2" placeholder="Enter 23 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty Four value:</label>
+          <input type="number" name="v2" placeholder="Enter 24 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty five value:</label>
+          <input type="number" name="v2" placeholder="Enter 25 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty six value:</label>
+          <input type="number" name="v2" placeholder="Enter 26 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty seven value:</label>
+          <input type="number" name="v2" placeholder="Enter 27 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty eight value:</label>
+          <input type="number" name="v2" placeholder="Enter 28 value">
+        </div>
+        <div class="input-group hidden">
+          <label>Twenty nine value:</label>
+          <input type="number" name="v2" placeholder="Enter 29 value">
+        </div>
+        <center>
+          <div> Amount : <input type="number" , name="Amount" placeholder="enter Amount">
+          </div>
+        </center>
+        <!-- Add remaining input fields here -->
+        <div class="button-container">
+          <button type="button" onclick="showNextInput()">Next</button>
+          <button id="predict-button" type="submit" disabled>Predict</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

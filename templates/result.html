@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        background-color: #F5F5F5;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        opacity: 0;
+        animation: fade-in 1s ease-in-out forwards;
+      }
+
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 48px;
+        color: #333333;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 24px;
+        color: #666666;
+        margin: 10px 0;
+      }
+
+      .link {
+        font-size: 18px;
+        color: #FF6F61;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .link:hover {
+        color: #E64C3C;
+      }
+    </style>
+    <title>Fraud Transaction Detection</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prediction:</h1> {% if data == 0 %} <h1>Not a Fraud Transaction</h1> {% else %} <h1>Fraud Transaction</h1> {% endif %} <br>
+      <br>
+      <a class="link" href="/">Go back to the home page</a>
+      <br>
+      <br>
+      <h2>Created By:</h2>
+      <h2>Agamdeep Singh</h2>
+      <h2>iNeuron.ai</h2>
+    </div>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        var container = document.querySelector('.container');
+        container.style.opacity = '1';
+      });
+    </script>
+  </body>
+</html>
