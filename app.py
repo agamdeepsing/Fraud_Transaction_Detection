@@ -14,6 +14,10 @@ def fraud():
 @app.route('/predict', methods = ['POST'])
 def home():
     data = request.form.to_dict()
+    print("Form Data:", data)
+    required_fields = ['Time', 'v1','v2','v3','v4','v5','v6','v7','v8','v9','v10','v11','v12','v13','v14','v15','v16','v17','v18','v19','v20','v21','v22','v23','v24','v25','v26','v27','v28','v29','Amount']
+
+
     data['Time'] = float(request.form.get('Time'))
     data['v1'] = float(request.form.get('v1'))
     data['v2'] = float(request.form.get('v2'))
@@ -45,7 +49,14 @@ def home():
     data['v28'] = float(request.form.get('v28'))
     data['Amount'] = float(request.form.get('Amount'))
     
-    
+    # Check if any required field is empty
+    for field in required_fields:
+        if field not in data or data[field] == "":
+            return "Error: Please fill out all required fields."
+
+    # Convert fields to float
+    for field in required_fields:
+        data[field] = float(data[field])
 
     arr = np.array([list(data.values())])
     pred = model.predict(arr)
